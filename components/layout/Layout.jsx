@@ -1,6 +1,8 @@
+import { MainNavigation } from "./MainNavigation/MainNavigation";
+
 const Layout = ({ children }) => (
   <>
-    {/* <MainNavigation /> */}
+    <MainNavigation />
     <main>{children}</main>
   </>
 );
