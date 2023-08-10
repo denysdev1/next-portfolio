@@ -19,9 +19,9 @@ export const ProjectItem = ({ project }) => {
           <Image
             src={imagePath}
             alt={title}
-            width={300}
+            width={400}
             height={200}
-            layout="responsive"
+            style={{ width: "100%" }}
           />
         </div>
         <div className={classes.content}>

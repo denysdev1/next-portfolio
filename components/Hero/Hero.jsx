@@ -10,10 +10,11 @@ export const Hero = () => {
           alt="Photo of Denys"
           width={300}
           height={300}
+          priority
         />
       </div>
       <h1>Hi, I'm Denys</h1>
-      <p>This is my portfolio</p>
+      <p>Welcome to my portfolio</p>
     </section>
   );
 };
