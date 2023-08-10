@@ -1,48 +1,30 @@
 import { Hero } from "../components/Hero/Hero";
 import { FeaturedProjects } from "../components/FeaturedProjects/FeaturedProjects";
+import { getFeaturedProjects } from "../helpers/projects-util";
+import Head from "next/head";
 
-const DUMMY_PROJECTS = [
-  {
-    slug: "getting-started-with-nextjs",
-    title: "Getting started with NextJS",
-    image: "getting-started-nextjs.png",
-    shortDescription:
-      "NextJS is the React framework for production - it makes building fullstack React applications easier",
-    date: "2023-08-09",
-  },
-  {
-    slug: "getting-started-with-nextjs",
-    title: "Getting started with NextJS",
-    image: "getting-started-nextjs.png",
-    shortDescription:
-      "NextJS is the React framework for production - it makes building fullstack React applications easier",
-    date: "2023-08-09",
-  },
-  {
-    slug: "getting-started-with-nextjs",
-    title: "Getting started with NextJS",
-    image: "getting-started-nextjs.png",
-    shortDescription:
-      "NextJS is the React framework for production - it makes building fullstack React applications easier",
-    date: "2023-08-09",
-  },
-  {
-    slug: "getting-started-with-nextjs",
-    title: "Getting started with NextJS",
-    image: "getting-started-nextjs.png",
-    shortDescription:
-      "NextJS is the React framework for production - it makes building fullstack React applications easier",
-    date: "2023-08-09",
-  },
-];
-
-const Home = () => {
-  return (
-    <>
-      <Hero />
-      <FeaturedProjects projects={DUMMY_PROJECTS} />
-    </>
-  );
-};
+const Home = ({ projects }) => (
+  <>
+    <Head>
+      <title>Denys' Portfolio</title>
+      <meta
+        name="description"
+        content="I do front-end development and here you can see my pet-projects."
+      />
+    </Head>
+    <Hero />
+    <FeaturedProjects projects={projects} />
+  </>
+);
 
 export default Home;
+
+export function getStaticProps() {
+  const featuredProjects = getFeaturedProjects();
+
+  return {
+    props: {
+      projects: featuredProjects,
+    },
+  };
+}

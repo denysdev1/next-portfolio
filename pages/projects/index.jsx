@@ -1,40 +1,25 @@
+import Head from "next/head";
 import { AllProjects } from "../../components/AllProjects/AllProjects";
+import { getAllProjects } from "../../helpers/projects-util";
 
-const DUMMY_PROJECTS = [
-  {
-    slug: "getting-started-with-nextjs",
-    title: "Getting started with NextJS",
-    image: "getting-started-nextjs.png",
-    shortDescription:
-      "NextJS is the React framework for production - it makes building fullstack React applications easier",
-    date: "2023-08-09",
-  },
-  {
-    slug: "getting-started-with-nextjs",
-    title: "Getting started with NextJS",
-    image: "getting-started-nextjs.png",
-    shortDescription:
-      "NextJS is the React framework for production - it makes building fullstack React applications easier",
-    date: "2023-08-09",
-  },
-  {
-    slug: "getting-started-with-nextjs",
-    title: "Getting started with NextJS",
-    image: "getting-started-nextjs.png",
-    shortDescription:
-      "NextJS is the React framework for production - it makes building fullstack React applications easier",
-    date: "2023-08-09",
-  },
-  {
-    slug: "getting-started-with-nextjs",
-    title: "Getting started with NextJS",
-    image: "getting-started-nextjs.png",
-    shortDescription:
-      "NextJS is the React framework for production - it makes building fullstack React applications easier",
-    date: "2023-08-09",
-  },
-];
-
-const Projects = () => <AllProjects projects={DUMMY_PROJECTS} />;
+const Projects = ({ projects }) => (
+  <>
+    <Head>
+      <title>All Projects</title>
+      <meta name="description" content="A list of all my projects!" />
+    </Head>
+    <AllProjects projects={projects} />
+  </>
+);
 
 export default Projects;
+
+export const getStaticProps = () => {
+  const allProjects = getAllProjects();
+
+  return {
+    props: {
+      projects: allProjects,
+    },
+  };
+};
