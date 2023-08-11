@@ -35,3 +35,10 @@
 .content p {
   line-height: var(--size-6);
 }
+
+@media (max-width: 370px) {
+  .project {
+    justify-self: center;
+    width: 90%;
+  }
+}
