@@ -6,12 +6,8 @@ export const metadata = {
   description: "A list of all my projects!",
 };
 
-export const getStaticProps = () => {
-  return getAllProjects();
-};
-
 const Projects = () => {
-  const projects = getStaticProps();
+  const projects = getAllProjects();
 
   return <AllProjects projects={projects} />;
 };

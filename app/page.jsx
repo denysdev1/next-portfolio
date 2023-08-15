@@ -8,7 +8,7 @@ export const metadata = {
     "I do front-end development and here you can see my pet-projects.",
 };
 
-export const getStaticProps = () => {
+const getStaticProps = () => {
   return getFeaturedProjects();
 };
 
