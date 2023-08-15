@@ -1,12 +1,14 @@
+"use client";
+
 import classes from "./ProjectContent.module.css";
 import { ProjectHeader } from "../ProjectHeader/ProjectHeader";
 import { ReactMarkdown } from "react-markdown/lib/react-markdown";
 import Image from "next/image";
 import { PrismLight as SyntaxHighlighter } from "react-syntax-highlighter";
 import atomDark from "react-syntax-highlighter/dist/cjs/styles/prism/atom-dark";
-import js from 'react-syntax-highlighter/dist/cjs/languages/prism/javascript'
+import js from "react-syntax-highlighter/dist/cjs/languages/prism/javascript";
 
-SyntaxHighlighter.registerLanguage('js', js);
+SyntaxHighlighter.registerLanguage("js", js);
 
 export const ProjectContent = ({ project }) => {
   const imagePath = `/images/projects/${project.slug}/${project.image}`;
